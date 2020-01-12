@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Whiskr</title>
+    <title>W H I S K R</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,11 @@
   </head>
 
   <body>
+
+    <%= link_to 'Index', users_path %>
+    <%= link_to 'Add', new_user_path %>
+
     <%= yield %>
+
   </body>
 </html>
