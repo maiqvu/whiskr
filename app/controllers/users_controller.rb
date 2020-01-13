@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :check_if_logged_in, except: [:new]
+  before_action :check_if_admin, only: [:index]
+
   def new
     @user = User.new
   end
@@ -23,7 +26,6 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.find( params[:id] )
   end
 
 
@@ -47,7 +49,7 @@ class UsersController < ApplicationController
   # strong params
   private
   def user_params
-    params.require( :user ).permit( :name, :email, :bio )
+    params.require( :user ).permit( :name, :email, :password, :password_confirmation, :bio )
   end
 
 end

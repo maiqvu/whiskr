@@ -11,8 +11,22 @@
 
   <body>
 
-    <%= link_to 'Index', users_path %>
-    <%= link_to 'Add', new_user_path %>
+    <%= link_to 'Back to Home', root_path %>
+
+    <p>
+    <% if @current_user.present? %>
+      Welcome <%= @current_user.name %>
+      <% if @current_user.admin? %>
+      (admin)
+      <% end %>
+      |
+      <%= link_to 'My profile', user_path( @current_user.id ) %>
+      |
+      <%= link_to 'Logout', login_path, method: 'delete' %>
+    <% else %>
+      <%= link_to 'Login', login_path %>
+    <% end %>
+    </p>
 
     <%= yield %>
 
