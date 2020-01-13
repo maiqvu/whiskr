@@ -9,10 +9,11 @@ class UsersController < ApplicationController
 
 
   def create
-    @user = User.create( user_params )
+    @user = User.create( new_user_params )
 
     if @user.persisted?   # Log them in automatically after successful sign-up.
       session[:user_id] = @user.id
+      flash[:notice] = 'You have successfully created an account.'
       redirect_to user_path( @user.id )
     else   # If error during sign-up, show the form again.
       render :new
@@ -36,20 +37,26 @@ class UsersController < ApplicationController
 
   def update
     user = User.find( params[:id] )
-    user.update( user_params )
+    user.update( edit_user_params )
     redirect_to user_path( user.id )
   end
 
 
   def destroy
     User.destroy( params[:id] )
-    redirect_to users_path
+    redirect_to root_path
   end
 
+  
   # strong params
   private
-  def user_params
-    params.require( :user ).permit( :name, :email, :password, :password_confirmation, :bio )
+  def new_user_params
+    params.require( :user ).permit( :email, :password, :password_confirmation )
+  end
+
+  private
+  def edit_user_params
+    params.require( :user ).permit( :name, :email, :bio, :password, :password_confirmation )
   end
 
 end

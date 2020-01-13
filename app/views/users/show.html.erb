@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+    <strong><%= flash[:notice] %></strong>
+<% end %>
+
 <h2><%= @current_user.name %>'s profile</h2>
 
 <%= link_to 'Edit', edit_user_path( @current_user.id ) %>
@@ -9,4 +13,10 @@
     <%= link_to 'Index of all users', users_path %>
 <% end %>
 
-<%= render partial: 'form' %>
+<p>
+    <strong>Name</strong>: <%= @current_user.name %>
+    <br>
+    <strong>Email</strong>: <%= @current_user.email %>
+    <br>
+    <strong>Bio</strong>: <%= @current_user.bio %>
+</p>
