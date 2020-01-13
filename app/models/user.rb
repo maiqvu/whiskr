@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :works
+    has_many :photos
 
     validates :email, presence: true, uniqueness: true
 

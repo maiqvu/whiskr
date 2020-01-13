@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'   #Form submits here. Check credentials. Create session.
   delete '/login' => 'session#destroy'   #Log out
 
-  resources :users
+  resources :users, :photos
 
 end

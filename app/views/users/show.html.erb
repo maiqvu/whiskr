@@ -19,4 +19,8 @@
     <strong>Email</strong>: <%= @current_user.email %>
     <br>
     <strong>Bio</strong>: <%= @current_user.bio %>
+    <br>
+    <%= link_to 'All photos', photos_path %>
+    <br>
+    <%= link_to 'Add a new photo', new_photo_path %>
 </p>
