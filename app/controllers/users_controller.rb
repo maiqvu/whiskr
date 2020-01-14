@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   before_action :check_if_logged_in, except: [:new, :create]
   before_action :check_if_admin, only: [:index]
+  before_action :nav_check
 
   def new
     @user = User.new
