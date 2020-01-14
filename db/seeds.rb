@@ -10,6 +10,15 @@ print "Done creating #{User.count} users: "
 puts "#{User.pluck(:name).join(', ')}."
 
 
+Match.destroy_all
+
+m1 = Match.create! liker_id: u1.id, liked_id: u2.id
+m2 = Match.create! liker_id: u2.id, liked_id: u1.id
+m3 = Match.create! liker_id: u5.id, liked_id: u1.id
+
+puts "Done creating #{Match.count} matches."
+
+
 Photo.destroy_all
 
 p1 = Photo.create! url: 'https://cache.desktopnexus.com/thumbseg/1254/1254030-bigthumbnail.jpg'
@@ -27,4 +36,4 @@ u2.photos << p2 << p5
 u3.photos << p3
 u4.photos << p4
 
-puts "Photos of #{User.second.name}: #{User.second.photos.pluck(:url).join(', ')}."
+puts "Photos of #{User.second.name}: #{User.second.photos.pluck(:id).join(', ')}."

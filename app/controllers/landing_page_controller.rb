@@ -6,6 +6,7 @@ class LandingPageController < ApplicationController
   end
 
   def dashboard
+    @current_user.matches_with?()
   end
 
 end
