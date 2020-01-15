@@ -1,5 +1,13 @@
-<% if flash[:error] %>
-    <div class="flash"><%= flash[:error] %></div>
-<% end %>
-
 <h2>This is the dashboard.</h2>
+
+
+<ul>
+    <% @users.each do |u| %>
+        <li>
+            <%= @current_user.matches_with?(u) ? 'LIKED!' : '' %>
+            <% u.photos.each do |p| %>
+                <%= image_tag(p.url) %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>

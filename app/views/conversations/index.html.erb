@@ -1,0 +1,10 @@
+<h2>Conversations#index</h2>
+
+<ul>
+<% @conversations.each do |c| %>
+    <% receiver = c.sender_id == @current_user.id ? c.receiver : c.sender %>
+    <li>
+        <%= link_to receiver.name, conversation_messages_path(c.id) %>
+    </li>
+<% end %>
+</ul>

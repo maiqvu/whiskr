@@ -4,6 +4,9 @@ class User < ApplicationRecord
     has_many :matches_to, class_name: 'Match', foreign_key: 'liker_id'
     has_many :matches_from, class_name: 'Match', foreign_key: 'liked_id'
 
+    # has_many :conversations
+    # has_many :messages
+
     validates :email, presence: true, uniqueness: true
 
     has_secure_password
@@ -22,7 +25,7 @@ class User < ApplicationRecord
     end   # return value is boolean
 
     def all_matches
-        # All users who I have a match with, i.e. they are likers of me, and I am liker of them.
-        User.first.matches_from.map { |m| m.liker } & User.first.matches_to.map { |m| m.liked }
+        # Returns an array of all users who I have a match with, i.e. they are likers of me, and I am liker of them.
+        self.matches_from.map { |m| m.liker } & self.matches_to.map { |m| m.liked }
     end
 end

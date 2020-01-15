@@ -12,9 +12,9 @@ puts "#{User.pluck(:name).join(', ')}."
 
 Match.destroy_all
 
-m1 = Match.create! liker_id: u1.id, liked_id: u2.id
-m2 = Match.create! liker_id: u2.id, liked_id: u1.id
-m3 = Match.create! liker_id: u5.id, liked_id: u1.id
+m1 = Match.create! liker_id: u1.id, liked_id: u3.id
+m2 = Match.create! liker_id: u3.id, liked_id: u1.id
+m3 = Match.create! liker_id: u4.id, liked_id: u1.id
 
 puts "Done creating #{Match.count} matches."
 
@@ -37,3 +37,19 @@ u3.photos << p3
 u4.photos << p4
 
 puts "Photos of #{User.second.name}: #{User.second.photos.pluck(:id).join(', ')}."
+
+
+# Conversation.destroy_all
+
+# c1 = Conversation.create! sender_id: u1, receiver_id: u2
+
+# puts "Done creating #{Conversation.count} conversations."
+
+
+# Message.destroy_all
+
+# msg1 = Message.create! body: "Hi hello", conversation_id: c1, user_id: u1
+# msg2 = Message.create! body: "How are you?", conversation_id: c1, user_id: u2
+# msg3 = Message.create! body: "Nice weather today.", conversation_id: c1, user_id: u1
+
+# puts "Done creating #{Message.count} messages."

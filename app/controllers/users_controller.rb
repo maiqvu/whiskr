@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
   def create
     @user = User.create( new_user_params )
 
@@ -21,20 +20,16 @@ class UsersController < ApplicationController
     end
   end
 
-
   def index
     @users = User.all
   end
 
-
   def show
   end
-
 
   def edit
     @user = User.find( params[:id] )
   end
-
 
   def update
     user = User.find( params[:id] )
@@ -42,12 +37,14 @@ class UsersController < ApplicationController
     redirect_to user_path( user.id )
   end
 
-
   def destroy
     User.destroy( params[:id] )
     redirect_to root_path
   end
 
+  def profile
+    
+  end
   
   # strong params
   private
