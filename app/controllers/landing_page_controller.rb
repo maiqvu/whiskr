@@ -10,8 +10,12 @@ class LandingPageController < ApplicationController
     # Returns an array of all users except the currently logged in user.
     @users = User.where.not( id: @current_user.id )
 
-    # @current_user.matches_with?( user_id of photo that was clicked on )
+    ### TO DO: @current_user.matches_with?( user_id of photo that was clicked on )
     # if true, render the message page
+  end
+
+  def map
+    @users = User.select( :name, :latitude, :longitude )
   end
 
 end

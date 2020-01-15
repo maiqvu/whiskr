@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root :to => 'landing_page#home'
   get '/dashboard' => 'landing_page#dashboard'
+  get '/map' => 'landing_page#map'
 
   # Session routes:
   get '/login' => 'session#new'   #Login form

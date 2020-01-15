@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    
+    ### TO DO
   end
   
   # strong params
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   private
   def edit_user_params
-    params.require( :user ).permit( :name, :email, :bio, :password, :password_confirmation )
+    params.require( :user ).permit( :name, :email, :bio, :password, :password_confirmation, :address )
   end
 
 end

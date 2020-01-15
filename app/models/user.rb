@@ -34,4 +34,10 @@ class User < ApplicationRecord
         Message.where(sender_id: self.id, recipient_id: other.id).or(Message.where(sender_id: other.id, recipient_id: self.id))
     end
 
+    # Tell geocoder where to look to get the human-readable address string (which it'll use to work out the lat/long coordinates).
+    geocoded_by :address
+
+    # Tell geocoder to actually turn the above address string into lat/long GPS coordinates (by doing a lookup in a remote API) anytime a user is created/updated.
+    after_validation :geocode
+
 end

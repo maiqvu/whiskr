@@ -1,10 +1,10 @@
 User.destroy_all
 
-u1 = User.create! name: "mia", email: "whiskr@whiskr.com", password: "Wh1skr", bio: "whiskr overlord", admin: true
-u2 = User.create! name: "Pawdry Hepburn", email: "hepburn@mail.com", password: "Wh1skr", bio: "If you're into bad girls, swipe left because I'm a good girl."
-u3 = User.create! name: "Leopawrdo DiCatrio", email: "sinker@titanic.com", password: "Wh1skr", bio: "Total stud! Swipe right or you'll regret for life."
-u4 = User.create! name: 'Jude Paw', email: "drwatson@bakerst.com", password: "Wh1skr", bio: "Enjoy long walks to the kitchen to find cheese."
-u5 = User.create! name: 'Oprah Whisker', email: "ladyo@harpo.com", password: "Wh1skr", bio: "World famous. Mogul. Alpha female."
+u1 = User.create! name: "mia", email: "whiskr@whiskr.com", password: "Wh1skr", bio: "whiskr overlord", address: "1 Market St, Sydney", admin: true
+u2 = User.create! name: "Pawdry Hepburn", email: "hepburn@mail.com", password: "Wh1skr", bio: "If you're into bad girls, swipe left because I'm a good girl.", address: "22 Central Ave, Manly 2095"
+u3 = User.create! name: "Leopawrdo DiCatrio", email: "sinker@titanic.com", password: "Wh1skr", bio: "Total stud! Swipe right or you'll regret for life.", address: "15 Broadway, Ultimo 2007"
+u4 = User.create! name: 'Jude Paw', email: "drwatson@bakerst.com", password: "Wh1skr", bio: "Enjoy long walks to the kitchen to find cheese.", address: "1 York St, Sydney"
+u5 = User.create! name: 'Oprah Whisker', email: "ladyo@harpo.com", password: "Wh1skr", bio: "World famous. Mogul. Alpha female.", address: "30 Parke St, Katoomba NSW 2780"
 
 print "Done creating #{User.count} users: "
 puts "#{User.pluck(:name).join(', ')}."
