@@ -33,12 +33,12 @@
             const user = users[i];
 
             var marker = new google.maps.Marker({
-            position: { lat: user.latitude, lng: user.longitude },
-            map: map,
-            title: user.name
+                position: { lat: user.latitude, lng: user.longitude },
+                map: map,
+                title: user.name
             });
 
-            // Add the latest marker to bounds
+            // Add the latest marker to bounding box
             bounds.extend( marker.position )
 
         }   //end of for loop
