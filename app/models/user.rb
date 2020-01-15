@@ -1,11 +1,12 @@
 class User < ApplicationRecord
+
     has_many :photos
 
     has_many :matches_to, class_name: 'Match', foreign_key: 'liker_id'
     has_many :matches_from, class_name: 'Match', foreign_key: 'liked_id'
 
-    # has_many :conversations
-    # has_many :messages
+    has_many :messages_from, class_name: 'Message', foreign_key: 'sender_id'
+    has_many :messages_to, class_name: 'Message', foreign_key: 'recipient_id'
 
     validates :email, presence: true, uniqueness: true
 
@@ -26,6 +27,11 @@ class User < ApplicationRecord
 
     def all_matches
         # Returns an array of all users who I have a match with, i.e. they are likers of me, and I am liker of them.
-        self.matches_from.map { |m| m.liker } & self.matches_to.map { |m| m.liked }
+        self.matches_from.map { |match| match.liker } & self.matches_to.map { |match| match.liked }
     end
+
+    def all_messages_with( other )
+        Message.where(sender_id: self.id, recipient_id: other.id).or(Message.where(sender_id: other.id, recipient_id: self.id))
+    end
+
 end

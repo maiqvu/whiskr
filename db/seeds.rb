@@ -10,14 +10,6 @@ print "Done creating #{User.count} users: "
 puts "#{User.pluck(:name).join(', ')}."
 
 
-Match.destroy_all
-
-m1 = Match.create! liker_id: u1.id, liked_id: u3.id
-m2 = Match.create! liker_id: u3.id, liked_id: u1.id
-m3 = Match.create! liker_id: u4.id, liked_id: u1.id
-
-puts "Done creating #{Match.count} matches."
-
 
 Photo.destroy_all
 
@@ -39,17 +31,23 @@ u4.photos << p4
 puts "Photos of #{User.second.name}: #{User.second.photos.pluck(:id).join(', ')}."
 
 
-# Conversation.destroy_all
-
-# c1 = Conversation.create! sender_id: u1, receiver_id: u2
-
-# puts "Done creating #{Conversation.count} conversations."
 
 
-# Message.destroy_all
+Match.destroy_all
 
-# msg1 = Message.create! body: "Hi hello", conversation_id: c1, user_id: u1
-# msg2 = Message.create! body: "How are you?", conversation_id: c1, user_id: u2
-# msg3 = Message.create! body: "Nice weather today.", conversation_id: c1, user_id: u1
+m1 = Match.create! liker_id: u1.id, liked_id: u3.id
+m2 = Match.create! liker_id: u3.id, liked_id: u1.id
+m3 = Match.create! liker_id: u4.id, liked_id: u1.id
 
-# puts "Done creating #{Message.count} messages."
+puts "Done creating #{Match.count} matches."
+
+
+
+Message.destroy_all
+
+msg1 = Message.create! body: "Hi hello", sender_id: u1.id, recipient_id: u2.id
+msg2 = Message.create! body: "How are you?", sender_id: u2.id, recipient_id: u1.id
+msg3 = Message.create! body: "Nice weather today.", sender_id: u1.id, recipient_id: u2.id
+msg4 = Message.create! body: "Lalala?", sender_id: u1.id, recipient_id: u5.id
+
+puts "Done creating #{Message.count} messages."

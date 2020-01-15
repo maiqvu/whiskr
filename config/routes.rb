@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  # get 'messages/index'
-  # get 'conversations/index'
   root :to => 'landing_page#home'
   get '/dashboard' => 'landing_page#dashboard'
 
@@ -14,8 +12,8 @@ Rails.application.routes.draw do
   
   get '/users/:id/profile' => 'users#profile', as: 'profile'
 
-  resources :conversations, only: [:index, :create] do
-    resources :messages, only: [:index, :create]
-  end
+  # resources :conversations, only: [:index, :create] do
+  #   resources :messages, only: [:index, :create]
+  # end
 
 end

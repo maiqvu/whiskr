@@ -4,10 +4,10 @@
 <ul>
     <% @users.each do |u| %>
         <li>
-            <%= @current_user.matches_with?(u) ? 'LIKED!' : '' %>
-            <% u.photos.each do |p| %>
-                <%= image_tag(p.url) %>
-            <% end %>
+        <%= @current_user.matches_with?(u) ? 'LIKED!' : '' %>
+        <% u.photos.each do |p| %>
+            <%= image_tag(p.url) %>
+        <% end %>
         </li>
     <% end %>
 </ul>
