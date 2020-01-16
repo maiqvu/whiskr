@@ -4,13 +4,14 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
 
-  
+
   def create
-    photo = Photo.new( photo_params )
+    photo = Photo.new
 
     if params[:file].present?
       req = Cloudinary::Uploader.upload( params[:file] )
       photo.url = req["public_id"]
+      photo.user_id = @current_user.id
       photo.save
     end
 
