@@ -4,15 +4,24 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
 
+  
   def create
-    # @current_user.photos.create( url: params[:photo][:url] )
-    @photo = Photo.create url: params[:photo][:url], user_id: @current_user.id 
+    photo = Photo.new( photo_params )
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload( params[:file] )
+      photo.url = req["public_id"]
+      photo.save
+    end
+
     redirect_to user_path( @current_user.id )
   end
+
 
   def index
     @photos = Photo.all
   end
+
 
   def destroy
     Photo.destroy( params[:id] )
