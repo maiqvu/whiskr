@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   before_action :check_if_logged_in
-  before_action :nav_check
+  # before_action :nav_check
 
   ### TO DO: show /messages/:id for all messages between @current_user and user with params[:id]. create new message if there's no existing message thread between 2 users.
 

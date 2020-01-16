@@ -12,11 +12,34 @@
   </head>
 
   <body>
-    <% unless @skip_nav %>
-      <%= render partial: 'nav' %>
-    <% end %>
+    <div class="nav">
 
-    <%= yield %>
+      <div class="left-nav">
+        <%= link_to 'Back to Home', root_path %>
+      </div>
+          
+      <div class="right-nav">
+        <% if @current_user.present? %>
+          Welcome <%= @current_user.name %>
+          <% if @current_user.admin? %>
+            (admin)
+          <% end %>
+          |
+          <%= link_to 'My profile', user_path( @current_user.id ) %>
+          |
+          <%= link_to 'Logout', login_path, method: 'delete' %>
+        <% else %>
+          <%= link_to 'Login', login_path %>
+          |
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+      </div>
+          
+    </div>
+
+    <div class="yield">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
