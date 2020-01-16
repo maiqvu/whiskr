@@ -7,8 +7,6 @@
 <%= link_to 'Edit my profile', edit_user_path( @current_user.id ) %>
 |
 <%= link_to 'Delete my profile', user_path( @current_user.id ), method: 'delete' %>
-|
-<%= link_to 'Go to Dashboard', dashboard_path %>
 
 <% if @current_user.admin? %>
     |
@@ -25,6 +23,13 @@
     <%= link_to 'Add a new photo', new_photo_path %>
 </p>
 
+<strong>All matches</strong>: 
+<ul>
+<% @current_user.all_matches.each do |m| %>
+    <li><%= m.name %></li>
+<% end %>
+</ul>
+
 <div>
     Your photo gallery:
     <ul>
@@ -36,7 +41,3 @@
     <% end %>
     </ul>
 </div>
-
-<p>
-    <strong>All matches</strong>:
-</p>

@@ -26,7 +26,7 @@ class User < ApplicationRecord
     end   # return value is boolean
 
     def all_matches
-        # Returns an array of all users who I have a match with, i.e. they are likers of me, and I am liker of them.
+        # Returns an array of all users whom I have a match with, i.e. they are likers of me, and I am liker of them.
         self.matches_from.map { |match| match.liker } & self.matches_to.map { |match| match.liked }
     end
 

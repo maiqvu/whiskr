@@ -1,7 +1,7 @@
 
 <div class="masthead">
     <div class="centered">
-        <h2 class="dashboard">This is your dashboard.</h2>
+        <h2 class="dashboard">Check out hot kitties nearby!</h2>
     </div>
 </div>
 
@@ -25,11 +25,9 @@
                 <p><%= u.bio %></p>
                 <p>
                     <% if @current_user.matches_with?(u) %>
-                        <%= link_to "Your chat thread with #{u.name}", messages_with_path(u.id) %>
+                        <%= button_to "Chat with #{u.name}", messages_with_path(u.id), method: 'get' %>
                     <% elsif Match.where( liker: @current_user, liked: u ).any? %>
                         You have liked <%= u.name %>.
-                    <% elsif Match.where( liker: u, liked: @current_user ).any? %>
-                        <%= button_to '💓', create_match_path(u.id) %>
                     <% else %>
                         <%= button_to '💓', create_match_path(u.id) %>
                     <% end %>

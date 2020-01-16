@@ -1,6 +1,4 @@
 
-p {color: #666;}
-
 .card-content h4 {
     font-size: 2em;
     color: #400082;  
@@ -16,9 +14,6 @@ p {color: #666;}
     }
 }
 
-/*--------------------------------------------------------------
-Header styles minus menu
---------------------------------------------------------------*/
 
 .masthead {
     background: #400082;
@@ -32,7 +27,6 @@ Header styles minus menu
     font-weight: 500;
     text-transform: uppercase;
     text-align: center;
-    /* color: black; */
 }
 
 @media screen and (min-width: 44.44em) {
