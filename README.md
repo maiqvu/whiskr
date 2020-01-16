@@ -11,11 +11,10 @@ Because it's impurrrtant for you and your kitty to look at hot kitties nearby!
 * If the other user at some point also likes you back, then it's a match!
 * Congratulations! You two have unlocked a secret portal to message each other. Commence quietly sliding into their DM...
 * A user can also go to their profile page to upload more photos and create their own gallery on Whiskr (the moar the better, because who wouldn't want to look at your purrrettay face?!).
-<br>
-If you don't want to sign up (yet!), feel free to use one of the following credentials to log in:
-- Email: hepburn@mail.com, password: Wh1skr
-- Email: sinker@titanic.com, password: Wh1skr
-- Email: ladyo@harpo.com, password: Wh1skr
+* If you don't want to sign up (yet!), feel free to use one of the following credentials to log in:
+  - Email: hepburn@mail.com, password: Wh1skr
+  - Email: sinker@titanic.com, password: Wh1skr
+  - Email: ladyo@harpo.com, password: Wh1skr
 
 ## Built with
 
@@ -24,13 +23,15 @@ If you don't want to sign up (yet!), feel free to use one of the following crede
 * Database: PostgreSQL 12
 * Deployed on Heroku
 
-## System dependency
+## System dependencies
 
 In addition to the default gems that come with a Rails project template, I have added pry-rails, pry-byebug, cloudinary, and geocoder. See Gemfile for more details. Before starting up the server, please run `bundle` in your terminal.
 
 ## Future improvements
 
-Due to time limit, I couldn't implement everything I've planned out. Much heartbroken many upset ✧/ᐠ-ꞈ-ᐟ\  In the future I plan to improve Whiskr with these features:
+Due to time limit, I couldn't implement everything I have planned out. Much heartbroken many upset ✧/ᐠ-ꞈ-ᐟ\  
+
+In the future I plan to improve Whiskr with these features:
 
 - [ ] Change the color scheme and add more UI styling
 - [ ] Display a user's photo gallery in Instagram-like carousel style

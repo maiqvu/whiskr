@@ -5,7 +5,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0, 0.3);
     text-align: center;
     border-radius: 20px;
 }
@@ -25,12 +24,12 @@
     margin: 20px auto;
     padding: 10px 25px;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.15em;
     border: 2px solid #400082;
     border-radius: 20px;
     width: 200px;
     outline: none;
-    color: white;
+    color: black;
     transition: 0.25s;
 }
 
@@ -55,7 +54,7 @@
     color: #400082;
     transition: 0.25s;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.25em;
     font-weight: 500;
 }
 

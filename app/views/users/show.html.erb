@@ -1,37 +1,40 @@
-<% if flash[:notice] %>
-    <div class="flash"><%= flash[:notice] %></div>
-<% end %>
+<div class="profile-container">
 
-<h2><%= @current_user.name %>'s profile</h2>
+<div class="profile-contents">
+    <% if flash[:notice] %>
+        <div class="flash"><%= flash[:notice] %></div>
+    <% end %>
 
-<%= link_to 'Edit my profile', edit_user_path( @current_user.id ) %>
-|
-<%= link_to 'Delete my profile', user_path( @current_user.id ), method: 'delete' %>
+    <h2><%= @current_user.name %>'s profile</h2>
 
-<% if @current_user.admin? %>
+    <%= link_to 'Edit my profile', edit_user_path( @current_user.id ) %>
     |
-    <%= link_to 'Index of all users', users_path %>
-<% end %>
+    <%= link_to 'Delete my profile', user_path( @current_user.id ), method: 'delete' %>
 
-<p>
-    <strong>Name</strong>: <%= @current_user.name %>
-    <br>
-    <strong>Email</strong>: <%= @current_user.email %>
-    <br>
-    <strong>Bio</strong>: <%= @current_user.bio %>
-    <br>
-    <%= link_to 'Add a new photo', new_photo_path %>
-</p>
+    <% if @current_user.admin? %>
+        |
+        <%= link_to 'Index of all users', users_path %>
+    <% end %>
 
-<strong>All matches</strong>: 
-<ul>
-<% @current_user.all_matches.each do |m| %>
-    <li><%= m.name %></li>
-<% end %>
-</ul>
+    <p>
+        <strong>Name</strong>: <%= @current_user.name %>
+        <br><br>
+        <strong>Email</strong>: <%= @current_user.email %>
+        <br><br>
+        <strong>Bio</strong>: <%= @current_user.bio %>
+        <br><br>
+        <%= link_to 'Add a new photo', new_photo_path %>
+    </p>
 
-<div>
-    Your photo gallery:
+    <strong>All matches</strong>: 
+    <ul>
+    <% @current_user.all_matches.each do |m| %>
+        <li><%= m.name %></li>
+    <% end %>
+    </ul>
+</div>
+
+<div class="profile-gallery">
     <ul>
     <% @current_user.photos.each do |photo| %>
         <li>
@@ -40,4 +43,6 @@
         </li>
     <% end %>
     </ul>
+</div>
+
 </div>

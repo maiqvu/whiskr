@@ -1,15 +1,17 @@
-<div class="login-box">
+<div class="landing-page">
+    <div class="login-box">
 
-    <h2>Login</h2>
+        <h2>Login</h2>
 
-    <% if flash[:error] %>
-        <div class="flash"><%= flash[:error] %></div>
-    <% end %>
+        <% if flash[:error] %>
+            <div class="flash"><%= flash[:error] %></div>
+        <% end %>
 
-    <%= form_tag login_path do %>
-        <%= email_field_tag( :email, nil, placeholder: 'Email' ) %>
-        <%= password_field_tag( :password, nil, placeholder: 'Password' ) %>
-        <%= submit_tag 'Submit' %>
-    <% end %>
+        <%= form_tag login_path do %>
+            <%= email_field_tag( :email, nil, placeholder: 'Email' ) %>
+            <%= password_field_tag( :password, nil, placeholder: 'Password' ) %>
+            <%= submit_tag 'Submit' %>
+        <% end %>
 
+    </div>
 </div>

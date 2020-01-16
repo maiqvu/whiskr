@@ -1,0 +1,14 @@
+.profile-container {
+    display: grid;
+    height: auto;
+    margin: 2em 5em;
+    grid-template-columns: 1fr 2fr;
+}
+
+.profile-gallery img {
+    overflow: hidden;
+    width: 30vw;
+    height: 30vw;
+    object-fit: cover;
+    padding: 10px;
+}

@@ -1,12 +1,14 @@
-<div class="sign-up-box">
+<div class="landing-page">
+    <div class="sign-up-box">
 
-    <h2>Create an account</h2>
+        <h2>Create an account</h2>
 
-    <%= form_for @user do |f| %>
-        <%= f.email_field :email, placeholder: 'Email' %>
-        <%= f.password_field :password, placeholder: 'Password' %>
-        <%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
-        <%= f.submit 'Sign Up' %>
-    <% end %>
+        <%= form_for @user do |f| %>
+            <%= f.email_field :email, placeholder: 'Email' %>
+            <%= f.password_field :password, placeholder: 'Password' %>
+            <%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
+            <%= f.submit 'Sign Up' %>
+        <% end %>
 
+    </div>
 </div>
