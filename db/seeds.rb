@@ -18,15 +18,17 @@ p2 = Photo.create! url: 'https://cdns.klimg.com/merdeka.com/i/w/news/2012/05/15/
 p3 = Photo.create! url: 'https://i.pinimg.com/474x/52/d9/09/52d9092b83188e67b97058e20851c1d3.jpg'
 p4 = Photo.create! url: 'https://pngimage.net/wp-content/uploads/2018/06/gato-saltando-png.png'
 p5 = Photo.create! url: 'https://ca-times.brightspotcdn.com/dims4/default/33c083b/2147483647/strip/true/crop/1611x906+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffd%2Fef%2F05c1aab3e76c3d902aa0548c0046%2Fla-la-hm-pet-issue-18-jpg-20150615'
+p6 = Photo.create! url: 'https://i.imgur.com/4L4lteV.jpg'
 
 puts "Done creating #{Photo.count} photos."
 
 
 # USER -> PHOTO association
 u1.photos << p1
-u2.photos << p2 << p5
-u3.photos << p3
+u2.photos << p2
+u3.photos << p3 << p6
 u4.photos << p4
+u5.photos << p5
 
 puts "Photos of #{User.second.name}: #{User.second.photos.pluck(:id).join(', ')}."
 

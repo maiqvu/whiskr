@@ -1,0 +1,114 @@
+<ul>
+    <% @users.each do |u| %>
+        <div class="profile">
+            <li>
+            Status: <%= @current_user.matches_with?(u) ? 'LIKED!' : '' %>
+            <% u.photos.each do |p| %>
+                <%= image_tag(p.url) %>
+            <% end %>
+            </li>
+        </div>
+    <% end %>
+</ul>
+
+
+
+<header class="masthead">
+    <div class="centered">
+        <h2 class="dashboard">This is your dashboard.</h2>
+    </div>
+</header>
+
+<main class="main-area">
+<div class="centered">
+<section class="cards">
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="https://ca-times.brightspotcdn.com/dims4/default/33c083b/2147483647/strip/true/crop/1611x906+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffd%2Fef%2F05c1aab3e76c3d902aa0548c0046%2Fla-la-hm-pet-issue-18-jpg-20150615" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Whiskey</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam.</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="http://placekitten.com/800/610" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Fluffy</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="https://cdn.mos.cms.futurecdn.net/5FmFtc974AjN255w6iELLj.jpg" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Kitty</h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="http://placekitten.com/816/600" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Patches</h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="http://placekitten.com/820/620" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Duchess</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="http://placekitten.com/810/610" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Puchies</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="card">
+        <a href="#">
+            <figure class="thumbnail">
+                <img src="http://placekitten.com/808/608" alt="meow">
+            </figure>
+            <div class="card-content">
+                <h4>Panchito</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+            </div>
+        </a>
+    </article>
+
+</section>
+</div>
+</main>

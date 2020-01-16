@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'   #Form submits here. Check credentials. Create session.
   delete '/login' => 'session#destroy'   #Log out
 
-  resources :users, :photos
+  resources :users
+  get '/match/:id' => 'users#create_match'
+
+  resources :photos
   
   # get '/users/:id/profile' => 'users#profile', as: 'profile'
 

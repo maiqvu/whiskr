@@ -1,12 +1,36 @@
-<h2>This is the dashboard.</h2>
 
-<ul>
-    <% @users.each do |u| %>
-        <li>
-        <%= @current_user.matches_with?(u) ? 'LIKED!' : '' %>
-        <% u.photos.each do |p| %>
-            <%= image_tag(p.url) %>
-        <% end %>
-        </li>
-    <% end %>
-</ul>
+<div class="masthead">
+    <div class="centered">
+        <h2 class="dashboard">This is your dashboard.</h2>
+    </div>
+</div>
+
+<main class="main-area">
+<div class="centered">
+<section class="cards">
+
+<% @users.each do |u| %>
+
+    <article class="card">
+        <a href="/users/<%= u.id %>">
+            <figure class="thumbnail">
+                <% if u.photos.any? %>
+                    <%= image_tag( u.photos.first.url ) %>
+                <% else %>
+                    <p>This user hasn't uploaded any photos.</p>
+                <% end %>
+            </figure>
+            <div class="card-content">
+                <h4><%= u.name %></h4>
+                <p><%= u.bio %></p>
+                <p>
+                    Status: <%= @current_user.matches_with?(u) ? "It's a match!" : "Pending" %>
+                </p>
+            </div>
+        </a>
+    </article>
+
+<% end %>
+</section>
+</div>
+</main>
