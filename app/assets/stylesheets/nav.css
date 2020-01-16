@@ -1,0 +1,31 @@
+.nav {
+    display: flex;
+    height: 20%;
+    background: rgba(74,71,163,0.3);
+    width: 100%;
+}
+
+.left-nav {
+    width: 50%;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.right-nav {
+    width: 50%;
+    margin-right: 30px;
+    margin-top: 15px;
+    text-align: end;
+}
+
+.left-nav a, .right-nav a {
+    color: #400082;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+
+.left-nav a:hover, .right-nav a:hover {
+    color: whitesmoke;
+}

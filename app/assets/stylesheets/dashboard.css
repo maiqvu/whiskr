@@ -97,8 +97,8 @@ body {
 .card img {
   /* width: 100%;
   height: auto; */
-  width: 10vw;
-  height: 10vw;
+  width: 20vw;
+  height: 20vw;
   object-fit: cover;
 }
 

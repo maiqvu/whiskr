@@ -5,12 +5,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #191919;
+    background: rgba(0,0,0, 0.3);
     text-align: center;
+    border-radius: 20px;
 }
 
 .sign-up-box h2 {
-    color: white;
+    color: #400082;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0 40px 0;
@@ -24,7 +25,7 @@
     margin: 20px auto;
     padding: 10px 25px;
     text-align: center;
-    border: 2px solid #0d4a86;
+    border: 2px solid #400082;
     border-radius: 20px;
     width: 200px;
     outline: none;
@@ -37,7 +38,7 @@
 .sign-up-box input[type='password']:focus,
 .sign-up-box input[type='password']:hover {
     width: 250px;
-    border-color: #2ecc71;
+    border-color: #400082;
 }
 
 .sign-up-box input[type='submit'] {
@@ -47,10 +48,10 @@
     margin: 30px auto 10px auto;
     padding: 10px 40px;
     text-align: center;
-    border: 2px solid #0d4a86;
+    border: 2px solid #400082;
     border-radius: 20px;
     outline: none;
-    color: white;
+    color: #400082;
     transition: 0.25s;
     cursor: pointer;
     font-size: 16px;
@@ -58,6 +59,7 @@
 }
 
 .sign-up-box input[type='submit']:hover {
-    background-color: #2ecc71;
-    border-color: #2ecc71;
+    color: white;
+    background-color: #400082;
+    border-color: #400082;
 }
