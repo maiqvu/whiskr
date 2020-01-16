@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   ### TO DO: show /messages/:id for all messages between @current_user and user with params[:id]. create new message if there's no existing message thread between 2 users.
 
   def index
-    @other_user = User.find(params[:user_id])
+    @other_user = User.find( params[:user_id] )
     @messages = @current_user.all_messages_with( @other_user )
   end
 
@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Messages.create( message_params )
+    redirect_to messages_with_path( params[:user_id] )
   end
 
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users
   post '/match/:id' => 'users#create_match', as: 'create_match'
+
   get '/messages/:user_id' => 'messages#index', as: 'messages_with'
 
   resources :photos
