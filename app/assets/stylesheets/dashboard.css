@@ -48,7 +48,7 @@
 }
 
 /* Card Based Layout - Base styles */
-body {
+.main-area {
   background: #ecf0f1;
   line-height: 1.4;
 }
@@ -85,6 +85,27 @@ body {
 
 .card-content p {
 	font-size: 95%;
+}
+
+.card-content .button_to {
+  border: 1px solid;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+}
+
+.card-content input[type='submit'] {
+  width: 10em;
+  height: 2.5em;
+  font-size: 0.8em;
+  border-radius: 10px;
+}
+
+.card-content p.match-result {
+  text-align: center;
+  font-weight: 700;
+  color: orangered;
 }
 
 .card img {

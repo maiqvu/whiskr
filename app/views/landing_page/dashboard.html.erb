@@ -25,9 +25,10 @@
                 <p><%= u.bio %></p>
                 <p>
                     <% if @current_user.matches_with?(u) %>
-                        <%= button_to "Chat with #{u.name}", messages_with_path(u.id), method: 'get' %>
+                        <p class="match-result">It's a match!</p>
+                        <%= button_to 'Go to Chats', messages_with_path(u.id), method: 'get' %>
                     <% elsif Match.where( liker: @current_user, liked: u ).any? %>
-                        You have liked <%= u.name %>.
+                        <p class="match-result">You have liked <%= u.name %>.</p>
                     <% else %>
                         <%= button_to '💓', create_match_path(u.id) %>
                     <% end %>
