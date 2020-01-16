@@ -10,14 +10,9 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'   #Log out
 
   resources :users
-  get '/match/:id' => 'users#create_match'
+  post '/match/:id' => 'users#create_match', as: 'create_match'
+  get '/messages/:user_id' => 'messages#index', as: 'messages_with'
 
   resources :photos
-  
-  # get '/users/:id/profile' => 'users#profile', as: 'profile'
-
-  # resources :conversations, only: [:index, :create] do
-  #   resources :messages, only: [:index, :create]
-  # end
 
 end

@@ -42,6 +42,26 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def create_match
+    other_user = User.find( params[:id] )
+
+    Match.create( liker_id: @current_user.id, liked_id: other_user.id )
+
+    if Match.where( liker: other_user, liked: @current_user ).any?
+      # Mutual match found!
+      # Create a new message, and redirect to the messages page
+      Message.create(
+        body: '',
+        sender_id: @current_user.id,
+        recipient_id: other_user.id
+      )
+      redirect_to messages_with_path( other_user.id )
+    else
+      # No mutual match yet
+      redirect_to dashboard_path
+    end
+  end
+  
   
   # strong params
   private

@@ -24,7 +24,15 @@
                 <h4><%= u.name %></h4>
                 <p><%= u.bio %></p>
                 <p>
-                    Status: <%= @current_user.matches_with?(u) ? "It's a match!" : "Pending" %>
+                    <% if @current_user.matches_with?(u) %>
+                        <%= link_to "Your chat thread with #{u.name}", messages_with_path(u.id) %>
+                    <% elsif Match.where( liker: @current_user, liked: u ).any? %>
+                        You have liked <%= u.name %>.
+                    <% elsif Match.where( liker: u, liked: @current_user ).any? %>
+                        <%= button_to '💓', create_match_path(u.id) %>
+                    <% else %>
+                        <%= button_to '💓', create_match_path(u.id) %>
+                    <% end %>
                 </p>
             </div>
         </a>
