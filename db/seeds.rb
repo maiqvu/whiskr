@@ -13,24 +13,25 @@ puts "#{User.pluck(:name).join(', ')}."
 
 Photo.destroy_all
 
-p1 = Photo.create! url: 'https://cache.desktopnexus.com/thumbseg/1254/1254030-bigthumbnail.jpg'
-p2 = Photo.create! url: 'https://cdns.klimg.com/merdeka.com/i/w/news/2012/05/15/44562/670x335/10-tips-unik-perawatan-kucing-rev-1.jpg'
-p3 = Photo.create! url: 'https://i.pinimg.com/474x/52/d9/09/52d9092b83188e67b97058e20851c1d3.jpg'
+p1 = Photo.create! url: 'https://i.pinimg.com/originals/c4/0d/7a/c40d7a7060fb74926c257db982b6ddaf.jpg'
+p2 = Photo.create! url: 'https://cache.desktopnexus.com/thumbseg/1254/1254030-bigthumbnail.jpg'
+p3 = Photo.create! url: 'https://scontent.fsyd8-1.fna.fbcdn.net/v/t1.0-9/21272469_170194133529027_6331935066744233882_n.jpg?_nc_cat=110&_nc_ohc=T2IgUXyewPkAX-UJHzs&_nc_ht=scontent.fsyd8-1.fna&oh=4f79fefcebb2f3a1830c6a845247bf0a&oe=5EA87F3B'
 p4 = Photo.create! url: 'https://pngimage.net/wp-content/uploads/2018/06/gato-saltando-png.png'
-p5 = Photo.create! url: 'https://ca-times.brightspotcdn.com/dims4/default/33c083b/2147483647/strip/true/crop/1611x906+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffd%2Fef%2F05c1aab3e76c3d902aa0548c0046%2Fla-la-hm-pet-issue-18-jpg-20150615'
+p5 = Photo.create! url: 'https://www.tes.com/tesv2/files/styles/news_article_ml_x2/public/media/image/2018-09/fatcat.jpg?h=029cfac6&itok=Ky5MeJiR'
 p6 = Photo.create! url: 'https://i.imgur.com/4L4lteV.jpg'
+p7 = Photo.create! url: 'https://i.pinimg.com/474x/52/d9/09/52d9092b83188e67b97058e20851c1d3.jpg'
 
 puts "Done creating #{Photo.count} photos."
 
 
 # USER -> PHOTO association
-u1.photos << p1
-u2.photos << p2
-u3.photos << p3 << p6
+u1.photos << p1 << p2
+u2.photos << p7
+u3.photos << p3 << p5
 u4.photos << p4
-u5.photos << p5
+u5.photos << p6
 
-puts "Photos of #{User.second.name}: #{User.second.photos.pluck(:id).join(', ')}."
+puts "#{User.first.name} has #{User.first.photos.count} photos."
 
 
 
