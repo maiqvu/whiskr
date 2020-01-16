@@ -33,10 +33,10 @@
 <div>
     Your photo gallery:
     <ul>
-    <% @current_user.photos.each do |p| %>
+    <% @current_user.photos.each do |photo| %>
         <li>
-        <%= image_tag( p.url ) %>
-        <!-- <%= cl_image_tag( p.url ) %> -->
+        <%= cl_image_tag( photo.url ) %>
+        <%= button_to 'Delete photo', photo_path(photo.id), method: 'delete' %>
         </li>
     <% end %>
     </ul>

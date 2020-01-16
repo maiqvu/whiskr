@@ -1,7 +1,6 @@
 <h2>Add a new photo</h2>
 
 <%= form_for @photo do |f| %>
-    <%= f.text_field :url %>
-    <!-- <%= f.cl_image_upload :url %> -->
+    <%= f.cl_image_upload :url %>
     <%= f.submit 'Upload' %>
 <% end %>
