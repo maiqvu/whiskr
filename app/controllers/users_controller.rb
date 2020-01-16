@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :check_if_logged_in, except: [:new, :create]
   before_action :check_if_admin, only: [:index]
-  before_action :nav_check
+  # before_action :nav_check
 
   def new
     @user = User.new
@@ -28,13 +28,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find( params[:id] )
+    # @current_user = User.find( params[:id] )
   end
 
   def update
-    user = User.find( params[:id] )
-    user.update( edit_user_params )
-    redirect_to user_path( user.id )
+    @current_user = User.find( params[:id] )
+    @current_user.update!( edit_user_params )
+    redirect_to user_path( @current_user.id )
   end
 
   def destroy
@@ -42,9 +42,6 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def profile
-    ### TO DO
-  end
   
   # strong params
   private
@@ -54,7 +51,7 @@ class UsersController < ApplicationController
 
   private
   def edit_user_params
-    params.require( :user ).permit( :name, :email, :bio, :password, :password_confirmation, :address )
+    params.require( :user ).permit( :name, :email, :bio, :address, :password, :password_confirmation )
   end
 
 end

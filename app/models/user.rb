@@ -18,7 +18,7 @@ class User < ApplicationRecord
         (?=.*[A-Z])   # contains at least 1 uppercase character
     /x
 
-    validates :password, format: PASSWORD_REQUIREMENTS
+    validates :password, format: PASSWORD_REQUIREMENTS, allow_nil: true, on: :update
 
     def matches_with?( other )
         Match.where( liker: self, liked: other ).any? &&

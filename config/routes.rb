@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, :photos
   
-  get '/users/:id/profile' => 'users#profile', as: 'profile'
+  # get '/users/:id/profile' => 'users#profile', as: 'profile'
 
   # resources :conversations, only: [:index, :create] do
   #   resources :messages, only: [:index, :create]
