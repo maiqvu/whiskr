@@ -20,10 +20,21 @@
     <br>
     <strong>Bio</strong>: <%= @current_user.bio %>
     <br>
-    <%= link_to 'All photos', photos_path %>
-    <br>
     <%= link_to 'Add a new photo', new_photo_path %>
-    <br>
+</p>
+
+<div>
+    Your photo gallery:
+    <ul>
+    <% @current_user.photos.each do |p| %>
+        <li>
+        <%= cl_image_tag( p.url ) %>
+        </li>
+    <% end %>
+    </ul>
+</div>
+
+<p>
     <strong>All matches</strong>:
     <ul>
     <% @current_user.all_matches.each do |match| %>
