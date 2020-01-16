@@ -12,11 +12,10 @@ Because it's impurrrtant for you and your kitty to look at hot kitties nearby!
 * Congratulations! You two have unlocked a secret portal to message each other. Commence quietly sliding into their DM...
 * A user can also go to their profile page to upload more photos and create their own gallery on Whiskr (the moar the better, because who wouldn't want to look at your purrrettay face?!).
 <br>
-<br>
 If you don't want to sign up (yet!), feel free to use one of the following credentials to log in:
-* Email: hepburn@mail.com, password: Wh1skr
-* Email: sinker@titanic.com, password: Wh1skr
-* Email: ladyo@harpo.com, password: Wh1skr
+- Email: hepburn@mail.com, password: Wh1skr
+- Email: sinker@titanic.com, password: Wh1skr
+- Email: ladyo@harpo.com, password: Wh1skr
 
 ## Built with
 
