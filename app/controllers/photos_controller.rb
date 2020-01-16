@@ -5,12 +5,9 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # raise 'hell'
     # @current_user.photos.create( url: params[:photo][:url] )
     @photo = Photo.create url: params[:photo][:url], user_id: @current_user.id 
-
-
-    redirect_to photos_path
+    redirect_to user_path( @current_user.id )
   end
 
   def index
@@ -19,7 +16,7 @@ class PhotosController < ApplicationController
 
   def destroy
     Photo.destroy( params[:id] )
-    redirect_to photos_path
+    redirect_to user_path( @current_user.id )
   end
 
 end
