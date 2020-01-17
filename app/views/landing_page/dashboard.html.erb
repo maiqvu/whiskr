@@ -12,7 +12,7 @@
 <% @users.each do |u| %>
 
     <article class="card">
-        <a href="/users/<%= u.id %>">
+        <a href="users/<%= u.id %>">
             <figure class="thumbnail">
                 <% if u.photos.any? %>
                     <%= image_tag( u.photos.first.url ) %>
