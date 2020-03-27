@@ -16,6 +16,8 @@ class LandingPageController < ApplicationController
 
   def map
     @users = User.select( :name, :latitude, :longitude )
+    @maps_api_key = Rails.application.secrets.maps_api_key
+    
   end
 
 end

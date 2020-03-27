@@ -1,25 +1,21 @@
 class MessagesController < ApplicationController
 
-  before_action :check_if_logged_in
-  # before_action :nav_check
-
-  ### TO DO: show /messages/:id for all messages between @current_user and user with params[:id]. create new message if there's no existing message thread between 2 users.
-
+  before_action :check_if_logged_in  
+  
+  def new
+  end
+  
+  def create
+    @other_user = User.find( params[:user_id] )
+    @message = Messages.create( message_params )
+    @current_user.all_messages_with( @other_user ) << @message
+    redirect_to messages_with_path( params[:user_id] )
+  end
+  
   def index
     @other_user = User.find( params[:user_id] )
     @messages = @current_user.all_messages_with( @other_user )
   end
-
-
-  def new
-  end
-
-
-  def create
-    @message = Messages.create( message_params )
-    redirect_to messages_with_path( params[:user_id] )
-  end
-
 
   private
   def message_params

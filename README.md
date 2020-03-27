@@ -1,6 +1,6 @@
 # W H I S K R
 
-### a.k.a [__Tinder for Cats__](https://whiskr-maiqvu.herokuapp.com)  ฅ^•ﻌ•^ฅ
+### a.k.a [__Tinder for Cats__](https://whiskrdate.herokuapp.com)  ฅ^•ﻌ•^ฅ
 
 Because it's impurrrtant for you and your kitty to look at hot kitties nearby!
 
@@ -30,10 +30,9 @@ In addition to the default gems that come with a Rails project template, I have 
 ## Future improvements
 
 Due to time limit, I couldn't implement everything I have planned out. Much heartbroken many upset ✧/ᐠ-ꞈ-ᐟ\  
+In the future I plan to:
 
-In the future I plan to improve Whiskr with these features:
-
-- [ ] Change the color scheme and add more UI styling
+- [ ] Improve the UI
 - [ ] Display a user's photo gallery in Instagram-like carousel style
 - [ ] Implement touch-enabled Tinder-like swiping gestures
 - [ ] Real-time chat

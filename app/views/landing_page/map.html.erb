@@ -1,4 +1,5 @@
-<h2>Cool cats near me</h2>
+<h2>Cool cats near me <%= @maps_api_key%>
+</h2>
 
 
 <style>
@@ -51,5 +52,5 @@
 
 
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwBMfMDAq93Krx2WK2oeq9xWRs4o1QIio&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=#{ @maps_api_key }&callback=initMap">
 </script>
